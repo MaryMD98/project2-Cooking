@@ -68,5 +68,5 @@ const searchTHElog = (event) =>{
     SearchBTN.addEventListener('click', searchTHElog);
 // });
 
-search();
+// search();
 

@@ -26,6 +26,8 @@ router.get('/title/:id', async (req, res) => {
         if (!RecipeData){ res.status(404).json({ message: 'No recipe found with that title!' }); return; }
         //serialize data so the template can read it
         const Onerecipe = RecipeData.map((recipe) => recipe.get({ plain: true }));
+        console.log("Onerecipe");
+        console.log(Onerecipe);
         // res.status(200).json(Onerecipe);
         res.render('searchHeader', {style:"style.css", Onerecipe, logged_in: req.session.logged_in });
     }
@@ -44,12 +46,21 @@ router.get('/author_id/:id', async (req, res) => {
         console.log(RecipeData);
         // validate if key_ingredient exists
         if (!RecipeData){ res.status(404).json({ message: 'No recipe found with that author!' }); return; }
-        //serialize data so the template can read it
+        // serialize data so the template can read it
+        // const userRecipe = RecipeData.get({ plain: true });
         const userRecipe = RecipeData.map((recipe) => recipe.get({ plain: true }));
-        console.log();
+        console.log("userRecipe");
         console.log(userRecipe);
+        // const Onerecipe = userRecipe.get({ plain: true });
+        
+        // const Onerecipe = RecipeData.user.dataValues;
+        // const Onerecipe = userRecipe;
+        console.log("Onerecipe");
+        console.log(userRecipe.id);
+        console.log(userRecipe.username);
+        console.log(userRecipe.many_Recipes);
         const Onerecipe = userRecipe.many_Recipes;
-        console.log(Onerecipe);
+        
         // res.status(200).json(Onerecipe);
         res.render('searchHeader', {style:"style.css", Onerecipe, logged_in: req.session.logged_in });
     }
