@@ -13,8 +13,8 @@ const searchKEYingredient = async (event) =>{
   });
 
   if(response.ok){ 
-    document.cookie = "name="+searchKEY;
-    document.cookie = "namePATH=key_ingredient";  
+    // document.cookie = "name="+searchKEY;
+    // document.cookie = "namePATH=key_ingredient";  
     document.location.replace(`/api/search/key_ingredient/${searchKEY}`);}
   else {document.location.replace('/');}
 };
@@ -32,8 +32,8 @@ const searchTitleRecipe = async (event) =>{
   });
 
   if(response.ok){ 
-    document.cookie = "name="+searchKEY;
-    document.cookie = "namePATH=title";
+    // document.cookie = "name="+searchKEY;
+    // document.cookie = "namePATH=title";
     document.location.replace(`/api/search/title/${searchKEY}`);}
   else {document.location.replace('/');}
 };
@@ -51,11 +51,28 @@ const searchbyAUTHOR = async (event) =>{
   });
 
   if(response.ok){ 
-    document.cookie = "name="+searchKEY;
-    document.cookie = "namePATH=author_id";
+    // document.cookie = "name="+searchKEY;
+    // document.cookie = "namePATH=author_id";
     document.location.replace(`/api/search/author_id/${searchKEY}`);}
   else {document.location.replace('/');}
 };
+
+// ~~~~~Done~~~~~~~~~
+// search button to seach by course
+// const searchbyCOURSE = async (event) =>{
+//   event.preventDefault();
+
+//   const searchKEY = document.querySelector('#author_search').value.trim();
+
+//   const response = await fetch(`/api/search/course/${searchKEY}`, {
+//     method: 'GET',
+//     headers: { 'Content-Type': 'application/json',}
+//   });
+
+//   if(response.ok){ 
+//     document.location.replace(`/api/search//course/${searchKEY}`);}
+//   else {document.location.replace('/');}
+// };
 
 // ~~~~~Done~~~~~~~~~
 // add a recipe to the data base
