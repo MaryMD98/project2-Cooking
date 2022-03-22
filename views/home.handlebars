@@ -1,0 +1,47 @@
+{{#each Allrecipe as |Allrecipe| }}
+    <div id="card1">
+
+        <div class="card">
+            <div class="card-image">
+                <a href="/api/recipes/{{Allrecipe.id}}">
+                <img src="/images/chad-montano-food .jpg"></a>
+                <span class="card-title"> {{Allrecipe.title}} </span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red">
+                <i class="material-icons">favorite_border</i></a>
+            </div>
+
+            <div class="card-content2">
+                <div class="input-field">
+                    <p id="recipe2">
+                        <label for="recipe2"> Course: </label>
+                        <span id="test"> &nbsp; {{Allrecipe.course}} </span>
+                    </p>
+                </div>
+
+                <div class="input-field">
+                    <p id="cookTime2" type="text">
+                        <label for="cookTime2"> Prep/Cook Time: </label>
+                        <span id="test2">&nbsp; {{Allrecipe.cook_time}} </span>
+                    </p>
+                </div>
+
+                <div class="input-field">
+                    <p id="ingredient2" type="text">
+                        <label for="ingredient2">Key Ingredient: </label>
+                        <span id="test3"> &nbsp; {{Allrecipe.key_ingredient}} </span>
+                    </p>
+                </div>
+
+                <div class="input-field">
+                    <p id="chef3" type="text">
+                        <label for="chef3">Chef:</label>
+                        <span id="test4"> &nbsp; {{Allrecipe.user.username}} </span>
+                    </p>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+{{/each}}

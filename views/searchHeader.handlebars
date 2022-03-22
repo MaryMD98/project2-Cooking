@@ -1,0 +1,57 @@
+{{#each Onerecipe as |Onerecipe| }}
+
+    <div id="card1">
+
+        <div class="card">
+            <div class="card-image">
+                <a href="/api/recipes/{{Onerecipe.id}}">
+                <img src="/images/chad-montano-food .jpg"></a>
+                <span class="card-title"> {{Onerecipe.title}} </span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red">
+                <i class="material-icons">favorite_border</i></a>
+            </div>
+
+            <div class="card-content1">
+                <div class="input-field">
+                    <p id="recipe3">
+                        <label for="recipe3"> Recipe Name: </label>
+                        <span id="test"> &nbsp; {{Onerecipe.title}} </span>
+                    </p>
+                </div>
+
+                <div class="input-field">
+                    <p id="cookTime3" type="text">
+                        <label for="cookTime3"> Prep/Cook Time: </label>
+                        <span id="test2">&nbsp;{{Onerecipe.cook_time}}</span>
+                    </p>
+                </div>
+
+                <div class="input-field">
+                    <p id="ingredient3" type="text">
+                        <label for="ingredient3">Key_ingredient: </label>
+                        <span id="test3"> &nbsp; {{Onerecipe.key_ingredient}} </span>
+                    </p>
+                </div>
+
+                <div >
+                    <p id="in" type="text">
+                        <label for="in"> Instructions: </label>
+                        <span id="test2">&nbsp; </span>
+                    </p>
+                </div>
+                
+                <div class="input-field">
+                    <p id="chef3" type="text">
+                        <label for="chef3"></label>
+                        <span id="test4"> &nbsp; {{Onerecipe.instructions}} </span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+{{/each}}
+
+<script src="/js/searchLOG.js"></script>
